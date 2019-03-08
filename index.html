@@ -1,1 +1,47 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Material Design</title>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700,900');
 
+  body {
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    margin: 0px;
+    background: #e0e0e0;
+  }
+  .card  {
+    text-align:center;
+    justify-content: center;
+    flex-grow:1;
+    font-family: "Muli";
+    box-sizing: border-box;
+    height: auto;
+    padding: 16px;
+    background: white;
+    color: black;
+  }
+  .card:hover {
+   background: lightGrey;
+  }
+</style>
+<body>
+</body>
+<script>
+  var dataURL = "https://raw.githubusercontent.com/magswag/TestingMaterialDesign/master/data.json";
+  $(function() {
+    $.getJSON(dataURL, function(result) {
+      for(var i = 0; i < result.length; i++) {
+        var card = $("<div class=card></div>").html(result[i]);
+        $("body").append(card);
+      }
+    });
+  });
+</script>
+</html>
